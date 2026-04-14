@@ -3,273 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Whats Master — Профессиональная Рассылка в WhatsApp и Автоматизация</title>
-    <meta name="description" content="Whats Master — мощный софт для рассылки в WhatsApp, парсинга целевой аудитории и автоматизации продаж. Увеличьте прибыль с помощью массовых рассылок в Ватсап.">
-    <meta name="keywords" content="рассылка в whatsapp, ватсап рассылка, автоматизация whatsapp, whats master, парсинг whatsapp, софт для рассылок">
-    
-    <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✅</text></svg>">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS (via CDN for fast prototyping) -->
+    <title>Whats Master — Рассылка в Ватсап с Мультиаккаунтами</title>
+    <meta name="description" content="Автоматизация маркетинга в WhatsApp: рассылки, чат-боты, парсинг групп и работа с мультиаккаунтами.">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            light: '#25D366',
-                            DEFAULT: '#128C7E',
-                            dark: '#075E54',
-                        },
-                        dark: {
-                            bg: '#0b0e14',
-                            card: '#161b22',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { background-color: #0b0e14; color: #e6edf3; }
-        .glass { background: rgba(22, 27, 34, 0.8); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }
-        .gradient-text { background: linear-gradient(90deg, #25D366, #128C7E); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .btn-primary { background: linear-gradient(135deg, #25D366 0%, #128C7E 100%); transition: transform 0.2s; }
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2); }
-        .feature-card { transition: all 0.3s ease; }
-        .feature-card:hover { border-color: #25D366; transform: translateY(-5px); }
-        html { scroll-behavior: smooth; }
+        body { background-color: #0b0e14; color: #e2e8f0; font-family: 'Inter', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .text-whatsapp { color: #25D366; }
+        .bg-whatsapp { background-color: #25D366; }
+        .gradient-border { border-image: linear-gradient(to right, #25D366, #128C7E) 1; }
     </style>
-
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
-        (function(m,e,t,r,i,k,a){
-            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-            m[i].l=1*new Date();
-            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=108527532', 'ym');
-
-        ym(108527532, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+       m[i].l=1*new Date();
+       for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+       k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+       ym(108527532, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true });
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/108527532" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
 </head>
-<body class="font-sans antialiased">
-
-    <!-- Header -->
-    <header class="fixed w-full z-50 glass">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-extrabold flex items-center gap-2">
-                <span class="text-brand-light">WHATS</span><span>MASTER</span>
+<body>
+    <nav class="fixed w-full z-50 glass py-4">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="text-2xl font-bold text-whatsapp flex items-center gap-2">
+                <i class="fab fa-whatsapp text-3xl"></i> Whats Master
             </div>
-            <nav class="hidden md:flex space-x-8 font-semibold">
-                <a href="#features" class="hover:text-brand-light transition">Функции</a>
-                <a href="#tarif" class="hover:text-brand-light transition">Тарифы</a>
-                <a href="#faq" class="hover:text-brand-light transition">FAQ</a>
-            </nav>
-            <a href="#download" class="btn-primary px-6 py-2 rounded-full font-bold text-white">Скачать</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#features" class="hover:text-whatsapp transition">Функции</a>
+                <a href="#tarif" class="hover:text-whatsapp transition">Тарифы</a>
+                <a href="#reviews" class="hover:text-whatsapp transition">Отзывы</a>
+                <a href="https://whatsmaster.ru/#download" class="bg-whatsapp text-black px-6 py-2 rounded-full font-bold hover:opacity-90 transition">Скачать</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="pt-32 pb-20 px-6">
+        <div class="container mx-auto text-center">
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
+                Рассылка в Ватсап <br><span class="text-whatsapp">с Мультиаккаунтами</span>
+            </h1>
+            <p class="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
+                Мощный инструмент для автоматизации продаж в WhatsApp. Рассылайте сообщения тысячам клиентов без риска блокировки.
+            </p>
+            
+            <div class="relative max-w-4xl mx-auto mb-20">
+                <div class="aspect-video glass rounded-2xl flex items-center justify-center border-2 border-whatsapp/20 shadow-[0_0_50px_rgba(37,211,102,0.1)]">
+                    <div class="text-center">
+                        <i class="fab fa-whatsapp text-8xl text-whatsapp mb-4 animate-pulse"></i>
+                        <p class="text-gray-500 font-mono text-sm uppercase tracking-widest">Whats Master Interface v2.5</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="pt-32 pb-20 px-6">
-        <div class="container mx-auto text-center">
-            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
-                Профессиональная <span class="gradient-text">Рассылка в WhatsApp</span> <br>для Вашего Бизнеса
-            </h1>
-            <p class="text-xl text-gray-400 mb-10 max-w-3xl mx-auto">
-                Автоматизируйте продажи через самый популярный мессенджер в мире. Whats Master — это мощный комбайн для массовых рассылок, парсинга и работы с клиентами без блокировок.
-            </p>
-            <div class="flex flex-col md:flex-row justify-center gap-4">
-                <a href="https://whatsmaster.ru/#download" class="btn-primary text-white px-10 py-4 rounded-xl text-lg font-bold">Попробовать бесплатно</a>
-                <a href="#features" class="border border-gray-700 hover:border-brand-light px-10 py-4 rounded-xl text-lg font-bold transition">Узнать больше</a>
-            </div>
-            <div class="mt-16 relative">
-                <div class="absolute inset-0 bg-brand-light opacity-10 blur-3xl rounded-full"></div>
-                <img src="https://whatsmaster.ru/assets/img/hero-img.png" alt="Whats Master Interface" class="relative mx-auto rounded-2xl shadow-2xl border border-gray-800">
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats -->
-    <section class="py-10 border-y border-gray-800 bg-dark-card">
-        <div class="container mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div><div class="text-3xl font-bold text-brand-light">98%</div><div class="text-gray-500">Open Rate</div></div>
-            <div><div class="text-3xl font-bold text-brand-light">10k+</div><div class="text-gray-500">Пользователей</div></div>
-            <div><div class="text-3xl font-bold text-brand-light">500k+</div><div class="text-gray-500">Сообщений в день</div></div>
-            <div><div class="text-3xl font-bold text-brand-light">24/7</div><div class="text-gray-500">Поддержка</div></div>
-        </div>
-    </section>
-
-    <!-- Features -->
-    <section id="features" class="py-20 px-6">
-        <div class="container mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-16">Все инструменты для <span class="text-brand-light">взрывного роста</span></h2>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Feature 1 -->
-                <div class="feature-card glass p-8 rounded-2xl border border-gray-800">
-                    <div class="w-14 h-14 bg-brand-dark/30 rounded-lg flex items-center justify-center mb-6">
-                        <svg class="w-8 h-8 text-brand-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Массовые рассылки</h3>
-                    <p class="text-gray-400">Отправляйте тысячи сообщений по вашей базе контактов. Поддержка текста, фото, видео, аудио и документов.</p>
-                </div>
-
-                <!-- Feature 2 -->
-                <div class="feature-card glass p-8 rounded-2xl border border-gray-800">
-                    <div class="w-14 h-14 bg-brand-dark/30 rounded-lg flex items-center justify-center mb-6">
-                        <svg class="w-8 h-8 text-brand-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Умный Парсер</h3>
-                    <p class="text-gray-400">Собирайте целевую аудиторию из групп WhatsApp. Фильтруйте по активности и наличию WhatsApp на номере.</p>
-                </div>
-
-                <!-- Feature 3 -->
-                <div class="feature-card glass p-8 rounded-2xl border border-gray-800">
-                    <div class="w-14 h-14 bg-brand-dark/30 rounded-lg flex items-center justify-center mb-6">
-                        <svg class="w-8 h-8 text-brand-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Защита от Бана</h3>
-                    <p class="text-gray-400">Встроенные алгоритмы рандомизации текста, задержки между сообщениями и имитация поведения человека.</p>
-                </div>
-
-                <!-- Feature 4 -->
-                <div class="feature-card glass p-8 rounded-2xl border border-gray-800">
-                    <div class="w-14 h-14 bg-brand-dark/30 rounded-lg flex items-center justify-center mb-6">
-                        <svg class="w-8 h-8 text-brand-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Автоответчик</h3>
-                    <p class="text-gray-400">Настраивайте сценарии ответов. Программа сама ответит клиенту, если он напишет вам после рассылки.</p>
-                </div>
-
-                <!-- Feature 5 -->
-                <div class="feature-card glass p-8 rounded-2xl border border-gray-800">
-                    <div class="w-14 h-14 bg-brand-dark/30 rounded-lg flex items-center justify-center mb-6">
-                        <svg class="w-8 h-8 text-brand-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Групповые Рассылки</h3>
-                    <p class="text-gray-400">Рассылайте сообщения не только в ЛС, но и по списку групп, в которых вы состоите.</p>
-                </div>
-
-                <!-- Feature 6 -->
-                <div class="feature-card glass p-8 rounded-2xl border border-gray-800">
-                    <div class="w-14 h-14 bg-brand-dark/30 rounded-lg flex items-center justify-center mb-6">
-                        <svg class="w-8 h-8 text-brand-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Отчетность</h3>
-                    <p class="text-gray-400">Подробные логи и отчеты по каждой кампании. Вы точно знаете, кто получил и прочитал сообщение.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tariffs -->
-    <section id="tarif" class="py-20 bg-dark-card/50">
+    <section id="features" class="py-20 bg-[#0d1117]">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-16">Выберите свой <span class="text-brand-light">тариф</span></h2>
-            
+            <h2 class="text-4xl font-bold text-center mb-16">Возможности системы</h2>
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Tariff 1 -->
-                <div class="glass p-10 rounded-3xl flex flex-col">
-                    <h3 class="text-2xl font-bold mb-2">Начальный</h3>
-                    <div class="text-4xl font-extrabold mb-6">4 900 ₽ <span class="text-lg font-normal text-gray-500">/ год</span></div>
-                    <ul class="space-y-4 mb-10 flex-grow">
-                        <li class="flex items-center gap-2"><svg class="w-5 h-5 text-brand-light" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Рассылка в ЛС</li>
-                        <li class="flex items-center gap-2"><svg class="w-5 h-5 text-brand-light" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Базовый антибан</li>
-                        <li class="flex items-center gap-2"><svg class="w-5 h-5 text-brand-light" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> 1 аккаунт</li>
-                    </ul>
-                    <a href="https://whatsmaster.ru/#tarif" class="border border-brand-light text-brand-light text-center py-3 rounded-xl font-bold hover:bg-brand-light hover:text-white transition">Купить</a>
+                <div class="glass p-8 rounded-2xl hover:border-whatsapp transition">
+                    <i class="fas fa-layer-group text-4xl text-whatsapp mb-6"></i>
+                    <h3 class="text-xl font-bold mb-4">Мультиаккаунты</h3>
+                    <p class="text-gray-400">Работайте одновременно с неограниченным количеством аккаунтов для масштабирования рассылок.</p>
                 </div>
-
-                <!-- Tariff 2 (Popular) -->
-                <div class="glass p-10 rounded-3xl border-2 border-brand-light relative flex flex-col scale-105">
-                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-light text-white px-4 py-1 rounded-full text-sm font-bold">ХИТ ПРОДАЖ</div>
-                    <h3 class="text-2xl font-bold mb-2">Профессионал</h3>
-                    <div class="text-4xl font-extrabold mb-6">9 900 ₽ <span class="text-lg font-normal text-gray-500">/ год</span></div>
-                    <ul class="space-y-4 mb-10 flex-grow">
-                        <li class="flex items-center gap-2 font-semibold text-white"><svg class="w-5 h-5 text-brand-light" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Все функции парсинга</li>
-                        <li class="flex items-center gap-2 font-semibold text-white"><svg class="w-5 h-5 text-brand-light" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Мультиаккаунты</li>
-                        <li class="flex items-center gap-2 font-semibold text-white"><svg class="w-5 h-5 text-brand-light" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Автоответчик</li>
-                        <li class="flex items-center gap-2 font-semibold text-white"><svg class="w-5 h-5 text-brand-light" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Приоритетная поддержка</li>
-                    </ul>
-                    <a href="https://whatsmaster.ru/#tarif" class="btn-primary text-white text-center py-4 rounded-xl font-bold">Выбрать Pro</a>
+                <div class="glass p-8 rounded-2xl hover:border-whatsapp transition">
+                    <i class="fas fa-robot text-4xl text-whatsapp mb-6"></i>
+                    <h3 class="text-xl font-bold mb-4">Чат-боты</h3>
+                    <p class="text-gray-400">Автоматизируйте ответы клиентам с помощью умных сценариев и ИИ-интеграции.</p>
                 </div>
-
-                <!-- Tariff 3 -->
-                <div class="glass p-10 rounded-3xl flex flex-col">
-                    <h3 class="text-2xl font-bold mb-2">Безлимит</h3>
-                    <div class="text-4xl font-extrabold mb-6">19 900 ₽ <span class="text-lg font-normal text-gray-500">/ навсегда</span></div>
-                    <ul class="space-y-4 mb-10 flex-grow">
-                        <li class="flex items-center gap-2"><svg class="w-5 h-5 text-brand-light" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Вечная лицензия</li>
-                        <li class="flex items-center gap-2"><svg class="w-5 h-5 text-brand-light" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Все будущие обновления</li>
-                        <li class="flex items-center gap-2"><svg class="w-5 h-5 text-brand-light" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Обучение маркетингу</li>
-                    </ul>
-                    <a href="https://whatsmaster.ru/#tarif" class="border border-brand-light text-brand-light text-center py-3 rounded-xl font-bold hover:bg-brand-light hover:text-white transition">Купить</a>
+                <div class="glass p-8 rounded-2xl hover:border-whatsapp transition">
+                    <i class="fas fa-search-location text-4xl text-whatsapp mb-6"></i>
+                    <h3 class="text-xl font-bold mb-4">Парсер групп</h3>
+                    <p class="text-gray-400">Собирайте целевую аудиторию из любых открытых и закрытых WhatsApp групп за секунды.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Download Section -->
-    <section id="download" class="py-24 px-6 relative overflow-hidden">
-        <div class="container mx-auto text-center glass p-16 rounded-[3rem] border-2 border-brand-light/20 relative z-10">
-            <h2 class="text-5xl font-bold mb-8">Готовы начать <span class="text-brand-light">рассылку</span>?</h2>
-            <p class="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">Скачайте демо-версию Whats Master прямо сейчас и убедитесь в эффективности нашего софта. Установка занимает менее 2-х минут.</p>
-            <div class="flex flex-col md:flex-row justify-center gap-6">
-                <a href="https://whatsmaster.ru/#download" class="btn-primary text-white px-12 py-5 rounded-2xl text-xl font-bold flex items-center justify-center gap-3">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                    Скачать Whats Master
-                </a>
+    <section id="reviews" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16">Отзывы наших клиентов</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass p-8 rounded-2xl italic">
+                    <p class="mb-6">"Лучший софт для работы с Ватсапом. Перепробовал много сервисов, но Whats Master стабильнее всего держит аккаунты."</p>
+                    <div class="flex items-center gap-4 not-italic">
+                        <div class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center font-bold">А</div>
+                        <div>
+                            <p class="font-bold">Александр</p>
+                            <p class="text-sm text-gray-500 italic text-whatsapp">Маркетолог</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass p-8 rounded-2xl italic">
+                    <p class="mb-6">"Парсер групп — это просто находка. За один вечер собрала базу из 5000 живых контактов по своей нише."</p>
+                    <div class="flex items-center gap-4 not-italic">
+                        <div class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center font-bold">М</div>
+                        <div>
+                            <p class="font-bold">Марина</p>
+                            <p class="text-sm text-gray-500 italic text-whatsapp">Владелец турагентства</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass p-8 rounded-2xl italic">
+                    <p class="mb-6">"Поддержка на высоте. Помогли настроить рандомизацию текста, теперь банов практически нет."</p>
+                    <div class="flex items-center gap-4 not-italic">
+                        <div class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center font-bold">И</div>
+                        <div>
+                            <p class="font-bold">Игорь</p>
+                            <p class="text-sm text-gray-500 italic text-whatsapp">Предприниматель</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <p class="mt-6 text-sm text-gray-500 italic">Поддерживается Windows 7, 8, 10, 11</p>
         </div>
-        <!-- Decorative blobs -->
-        <div class="absolute top-0 left-0 w-64 h-64 bg-brand-light opacity-5 blur-[100px]"></div>
-        <div class="absolute bottom-0 right-0 w-64 h-64 bg-brand-light opacity-5 blur-[100px]"></div>
     </section>
 
-    <!-- FAQ -->
-    <section id="faq" class="py-20 px-6">
-        <div class="container mx-auto max-w-4xl">
-            <h2 class="text-4xl font-bold text-center mb-16">Часто задаваемые вопросы</h2>
-            <div class="space-y-6">
-                <div class="glass p-6 rounded-xl">
-                    <h4 class="text-xl font-bold mb-2">Безопасно ли это для моего аккаунта?</h4>
-                    <p class="text-gray-400">Мы используем алгоритмы имитации действий человека, чтобы минимизировать риски. Однако мы всегда рекомендуем использовать дополнительные аккаунты для массовых рассылок.</p>
+    <section id="tarif" class="py-20 bg-[#0d1117]">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-16">Выберите свой тариф</h2>
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="glass p-10 rounded-3xl">
+                    <h3 class="text-2xl font-bold mb-4">Месяц</h3>
+                    <p class="text-4xl font-extrabold mb-8">2 900 ₽</p>
+                    <ul class="text-left space-y-4 mb-10 text-gray-400">
+                        <li><i class="fas fa-check text-whatsapp mr-2"></i> Все функции программы</li>
+                        <li><i class="fas fa-check text-whatsapp mr-2"></i> Обновления включены</li>
+                        <li><i class="fas fa-check text-whatsapp mr-2"></i> Поддержка 24/7</li>
+                    </ul>
+                    <a href="https://whatsmaster.ru/#tarif" class="block w-full py-4 rounded-xl border border-whatsapp text-whatsapp font-bold hover:bg-whatsapp hover:text-black transition">Купить</a>
                 </div>
-                <div class="glass p-6 rounded-xl">
-                    <h4 class="text-xl font-bold mb-2">Нужны ли прокси?</h4>
-                    <p class="text-gray-400">Для работы с одного аккаунта прокси не обязательны. Если вы планируете работать с 5+ аккаунтов одновременно, мы рекомендуем использовать мобильные прокси.</p>
+                <div class="glass p-10 rounded-3xl border-2 border-whatsapp relative">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-whatsapp text-black px-4 py-1 rounded-full text-sm font-bold">ХИТ ПРОДАЖ</div>
+                    <h3 class="text-2xl font-bold mb-4">Год</h3>
+                    <p class="text-4xl font-extrabold mb-8">9 900 ₽</p>
+                    <ul class="text-left space-y-4 mb-10 text-gray-400">
+                        <li><i class="fas fa-check text-whatsapp mr-2"></i> Экономия 70%</li>
+                        <li><i class="fas fa-check text-whatsapp mr-2"></i> Приоритетная поддержка</li>
+                        <li><i class="fas fa-check text-whatsapp mr-2"></i> Все будущие модули</li>
+                    </ul>
+                    <a href="https://whatsmaster.ru/#tarif" class="block w-full py-4 rounded-xl bg-whatsapp text-black font-bold hover:opacity-90 transition">Купить</a>
                 </div>
-                <div class="glass p-6 rounded-xl">
-                    <h4 class="text-xl font-bold mb-2">Как быстро я получу лицензию?</h4>
-                    <p class="text-gray-400">Лицензионный ключ приходит на почту моментально после оплаты в автоматическом режиме.</p>
+                <div class="glass p-10 rounded-3xl">
+                    <h3 class="text-2xl font-bold mb-4">Безлимит</h3>
+                    <p class="text-4xl font-extrabold mb-8">19 900 ₽</p>
+                    <ul class="text-left space-y-4 mb-10 text-gray-400">
+                        <li><i class="fas fa-check text-whatsapp mr-2"></i> Навсегда</li>
+                        <li><i class="fas fa-check text-whatsapp mr-2"></i> Перенос лицензии</li>
+                        <li><i class="fas fa-check text-whatsapp mr-2"></i> Обучающий курс</li>
+                    </ul>
+                    <a href="https://whatsmaster.ru/#tarif" class="block w-full py-4 rounded-xl border border-whatsapp text-whatsapp font-bold hover:bg-whatsapp hover:text-black transition">Купить</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-12 border-t border-gray-800">
-        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8 text-gray-500">
-            <div class="text-xl font-bold text-white">WHATS MASTER</div>
-            <div class="flex gap-8">
-                <a href="#" class="hover:text-brand-light">Политика конфиденциальности</a>
-                <a href="#" class="hover:text-brand-light">Оферта</a>
+    <footer class="py-20 px-6 border-t border-gray-900">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-8">Готовы начать рассылку?</h2>
+            <p class="text-gray-400 mb-10">Скачайте программу прямо сейчас и получите бесплатный тестовый период.</p>
+            <a href="https://whatsmaster.ru/#download" class="inline-block bg-whatsapp text-black px-12 py-5 rounded-full text-xl font-extrabold hover:scale-105 transition shadow-[0_0_30px_rgba(37,211,102,0.3)]">СКАЧАТЬ БЕСПЛАТНО</a>
+            <div class="mt-16 text-gray-600 text-sm">
+                &copy; 2026 Whats Master. Все права защищены.
             </div>
-            <div>&copy; 2026 Whats Master. Все права защищены.</div>
         </div>
     </footer>
-
 </body>
 </html>
